@@ -22,14 +22,14 @@ public class HelloController {
     }
 
     @GetMapping("hello-string")
-    @ResponseBody       // body에 직접 넣겠다는 의미
+    @ResponseBody
     public String helloString(@RequestParam("name") String name) {
-        return "hello " + name;         // "hello spring"
+        return "hello" + name;
     }
 
     @GetMapping("hello-api")
     @ResponseBody
-    public Hello HelloApi(@RequestParam("name") String name) {
+    public Hello helloApi(@RequestParam("name") String name) {
         Hello hello = new Hello();
         hello.setName(name);
         return hello;
@@ -41,6 +41,7 @@ public class HelloController {
         public String getName() {
             return name;
         }
+
         public void setName(String name) {
             this.name = name;
         }
